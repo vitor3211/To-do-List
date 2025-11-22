@@ -8,9 +8,10 @@
 </head>
 <body>
     <div class="cadastro-box">
-        <h1>Criar conta</h1>
-        <p>Preencha os campos para criar sua conta</p>
-
+        <div class="text-box">
+            <h1>Criar conta</h1>
+            <p>Preencha os campos para criar sua conta</p>
+        </div>
         <form method="post">
             <label>Nome</label>
             <div class="icone">
@@ -33,11 +34,13 @@
                 <i class="fa fa-key" aria-hidden="true"></i>
                 <input type="password" name="senha" id="password_confirm" placeholder="**********" required>
             </div>
-            <button type="submit">Enviar</button>
-            <p>Já tem uma conta?<br><a href="index.html">Login</a></p>
+            <div class="rodape">
+                <button type="submit">Enviar</button>
+                <p>Já tem uma conta? <a href="index.html">Fazer login</a></p>
+            </div>
         </form>
     </div>
 
-    <script src="script/cadastroScript.js"></script>
+    <script src="js/cadastroScript.js"></script>
 </body>
 </html>
