@@ -31,6 +31,7 @@ button{
     background: #008cff;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -85,7 +86,7 @@ button:hover{
 }
 
 .cadastro-box button{
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 15px;
 }
 
