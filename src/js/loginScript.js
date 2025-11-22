@@ -1,5 +1,6 @@
 const senha = document.getElementById("password");
 const icone = document.getElementById("olho");
+const btnEnviar = document.getElementById("");
 
 icone.addEventListener("click", () => {
     if (senha.type === "password") {
@@ -14,3 +15,4 @@ icone.addEventListener("click", () => {
         icone.classList.add("fa-eye-slash");
     }
 })
+

@@ -2,11 +2,12 @@ body{
     font-family: Arial;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    background: #f2f2f2;
+    background-color: #2a303b;
 }
 
-fieldset{
+form{
     display: flex;
     font-size: 20px;
     justify-content: center;
@@ -14,7 +15,7 @@ fieldset{
     flex-direction: column;
     width: 50vh;
     padding: 10px;
-    height: 20vh;
+    border: 1px solid black;
     gap: 10px;
     margin: 10px;
     border-radius: 10px;
@@ -23,20 +24,35 @@ fieldset{
 
 .container input{
     width: 90%;
-    height: 30px;
+    padding: 8px;
+    background: transparent;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .container button{
-    width: 50%;
+    width: 100%;
     padding: 10px;
+    font-size: 20px;
+    margin-bottom: 15px;
     background: #008cff;
     color: white;
-    border-radius: 10px;
-    margin: 10px;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .container button:hover{
     background: #006fd6;;
+}
+
+.buttons{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
 }
 

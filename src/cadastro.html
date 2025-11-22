@@ -3,43 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="css/cadastroStyle.css">
+    <link rel="stylesheet" href="css/login-register.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="cadastro-box">
-        <div class="text-box">
-            <h1>Criar conta</h1>
-            <p>Preencha os campos para criar sua conta</p>
+
+    <main>
+        <div class="cadastro-box">
+            <div class="text-box">
+                <h1>Criar conta</h1>
+                <p>Preencha os campos para criar sua conta</p>
+            </div>
+            <form method="POST">
+                <label>Nome</label>
+                <div class="icone">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+                </div>
+                <label>Email</label>
+                <div class="icone">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <input type="email" name="email" id="email" placeholder="Seu@email.com" required>
+                </div>
+                <label>Senha</label>
+                <div class="icone">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                    <input type="password" name="senha" id="password" placeholder="**********" required>
+                    <i class="fa fa-eye-slash" aria-hidden="true" id="olho"></i>
+                </div>
+                <label>Confirmar senha</label>
+                <div class="icone">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                    <input type="password" name="senha" id="password_confirm" placeholder="**********" required>
+                </div>
+                <div class="rodape">
+                    <button type="submit">Enviar</button>
+                    <p>Já tem uma conta? <a href="login.html">Fazer login</a></p>
+                </div>
+            </form>
         </div>
-        <form method="post">
-            <label>Nome</label>
-            <div class="icone">
-                <i class="fa fa-user-circle" aria-hidden="true"></i>
-                <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
-            </div>
-            <label>Email</label>
-            <div class="icone">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <input type="email" name="email" id="email" placeholder="Seu@email.com" required>
-            </div>
-            <label>Senha</label>
-            <div class="icone">
-                <i class="fa fa-key" aria-hidden="true"></i>
-                <input type="password" name="senha" id="password" placeholder="**********" required>
-                <i class="fa fa-eye-slash" aria-hidden="true" id="olho"></i>
-            </div>
-            <label>Confirmar senha</label>
-            <div class="icone">
-                <i class="fa fa-key" aria-hidden="true"></i>
-                <input type="password" name="senha" id="password_confirm" placeholder="**********" required>
-            </div>
-            <div class="rodape">
-                <button type="submit">Enviar</button>
-                <p>Já tem uma conta? <a href="index.html">Fazer login</a></p>
-            </div>
-        </form>
-    </div>
+    </main>
 
     <script src="js/cadastroScript.js"></script>
 </body>
