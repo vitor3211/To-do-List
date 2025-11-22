@@ -10,7 +10,6 @@ icone.addEventListener("click", () => {
 
     } else{
         senha.type = "password";
-        senha_confirmada.type = "password";
         icone.classList.remove("fa-eye");
         icone.classList.add("fa-eye-slash");
     }
