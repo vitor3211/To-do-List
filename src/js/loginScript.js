@@ -1,4 +1,4 @@
-const senha = document.getElementById("password");
+const senha = document.getElementById("senha");
 const icone = document.getElementById("olho");
 const btnEnviar = document.getElementById("");
 
