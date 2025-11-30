@@ -40,7 +40,7 @@
 
     <main>
         <div class="login-box">
-            <div class="texto">
+            <div class="text-box">
                 <h1>Login</h1>
                 <p><?php echo $mensagem;?></p>
                 <p>Coloque seus dados para logar na sua conta</p>
@@ -62,7 +62,7 @@
                     <a href="senha.html">Esqueceu sua senha?</a>
                 </div>
             </form>
-            <p id="ir_cadastro">Ainda não tem uma conta?<br><a href="cadastro.php">Cadastrar</a></p>
+            <p>Ainda não tem uma conta?<br><a href="cadastro.php">Cadastrar</a></p>
         </div>
     </main>
 

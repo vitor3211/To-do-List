@@ -4,7 +4,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #2a303b;
+    background: linear-gradient( #006fd6, white);
 }
 
 form{
@@ -20,7 +20,17 @@ form{
     margin: 10px;
     border-radius: 10px;
     background-color: white;
+    transform: translateY(100px);
+    animation: subir 0.7s ease-out forwards;
 }
+
+@keyframes subir{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .container input{
     width: 90%;
