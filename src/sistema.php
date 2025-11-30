@@ -142,7 +142,6 @@
       });
 
       const result = await response.json();
-      alert(result);
       document.querySelector(`tr[data-id="${id}"]`).remove();
       updateStats();
       loadTasks();
@@ -195,18 +194,6 @@
       const novaTarefa = await response.json();
       addTask(novaTarefa.id);
     }  
-
-    async function deleteTask(){
-      const response = await fetch('servico/deletar.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: 'task=' + encodeURIComponent()
-      });
-
-      document.querySelector(`tr[data-id="${id}"]`).remove();
-      updateStats();
-    }
-
 
     function updateStats() {
       const rows = document.querySelectorAll('#tasksList tr');
