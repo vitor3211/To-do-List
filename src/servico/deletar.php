@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $userId = $_SESSION['usuario_id'];
         $taskId = $_POST['id'];
 
-        $stmt = $pdo->prepare("DELETE FROM task WHERE id = :id AND user_id = :uid");
+        $stmt = $pdo->prepare("DELETE FROM task WHERE id_task = :id AND user_id = :uid");
         $stmt->execute([
             ':id' => $taskId,
             ':uid' => $userId

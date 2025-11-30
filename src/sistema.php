@@ -6,7 +6,6 @@
 		unset($_SESSION['senha']);
 		header('Location: login.php');
 	}
-    $nome_seguro = htmlspecialchars($_SESSION['usuario_nome'], ENT_QUOTES, 'UTF-8');
     
 ?>
 
@@ -85,9 +84,9 @@
 
         <!-- Stats -->
         <div class="stats">
-          <span>Total: <span id="totalTasks">0</span> tarefas</span>
-          <span>Concluídas: <span id="completedTasks">0</span></span>
-          <span>Pendentes: <span id="pendingTasks">0</span></span>
+          <span>Total: <span id="totalTasks">?</span> tarefas</span>
+          <span>Concluídas: <span id="completedTasks">?</span></span>
+          <span>Pendentes: <span id="pendingTasks">?</span></span>
         </div>
       </div>
     </div>
@@ -120,8 +119,8 @@
         </td>
       `;
       row.querySelector('.btn-delete').addEventListener('click', () => {
-      const taskId = row.getAttribute('data-id'); // pega o id da linha
-      deleteTask(taskId);
+      const taskId = row.getAttribute('data-id');
+      deleteTaskById(taskId);
       });
 
       tbody.appendChild(row);
@@ -135,7 +134,7 @@
       updateStats();
     }
 
-      async function deleteTaskById(id) {
+    async function deleteTaskById(id) {
       const response = await fetch('servico/deletar.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -161,14 +160,23 @@
         const row = document.createElement('tr');
         row.setAttribute('data-id', task.id);
         row.innerHTML = `
-        <td><input type="checkbox" onchange="toggleTask(this)"></td>
+        <td>
+          <input type="checkbox" class="checkbox" onchange="toggleTask(this)">
+        </td>
         <td class="task-title">${task.titulo}</td>
         <td class="task-date">${task.data}</td>
-        <td><button class="btn-delete">Excluir</button></td>
-        `;
+        <td>
+          <button class="btn-delete">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+          </button>
+        </td>
+      `;
         row.querySelector('.btn-delete').addEventListener('click', () => {
-        const taskId = row.getAttribute('data-id'); 
-        deleteTask(taskId);
+        const taskId = row.getAttribute('data-id');
+        deleteTaskById(taskId);
         });
         tbody.appendChild(row);
         });
@@ -176,8 +184,8 @@
       }
 
     async function adicionar(){
-      const input = document.getElementById('taskInput').value;
-      if(input == null){return};
+      const input = document.getElementById('taskInput').value.trim();
+      if(input == ""){return};
       const response = await fetch('servico/adicionar.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

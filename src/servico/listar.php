@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $chave = "jnFE12ji1Fejif110fCZnnvjxAnif"; 
         $crypto = new Crypto($chave);
 
-        $res = $pdo->prepare("SELECT id, titulo, data FROM task WHERE user_id = :i");
+        $res = $pdo->prepare("SELECT id_task, titulo, data FROM task WHERE user_id = :i");
         $res->bindValue(':i', $id);
         $res->execute();
         
@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         
         foreach ($lista as $t) {
             $tarefas[] = [
-            "id" => $t['id'], 
+            "id" => $t['id_task'], 
             "titulo" => $crypto->decrypt($t['titulo']), 
             "data"   => $t['data']
         ];  
